@@ -3,6 +3,7 @@
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
 * [C code](#c-code)
+* [Finding rank and size](#finding-rank-and-size)
 
 ## Learning objectives
 
