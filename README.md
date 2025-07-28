@@ -38,6 +38,8 @@ int main(int argc,char *argv[])
 }
 ```
 
+See [hello.c](src/hello.c).
+
 Note:
 
 * All C statements must be terminated by a semicolon.
@@ -76,6 +78,8 @@ int main(int argc, char *argv[])
   MPI_Finalize();
 }
 ```
+
+See [mpi_hello.c](src/mpi_hello.c).
 
 The `&` in front of a variable name means we are passing the address to that variable.
 
@@ -124,6 +128,20 @@ int main(int argc, char *argv[])
   /* Once all the MPI bits are finished you call MPI_Finalize */
   MPI_Finalize();
 }
+```
+
+See [mpi_hello2.c](src/mpi_hello2.c).
+
+Now compile as before:
+
+```bash
+mpicc -o mpi_hello2 mpi_hello2.c
+```
+
+and you can run it using:
+
+```bash
+mpirun -n 4 ./mpi_hello2
 ```
 
 
