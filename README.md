@@ -4,6 +4,7 @@
 * [Prerequisites](#prerequisites)
 * [C code](#c-code)
 * [Finding rank and size](#finding-rank-and-size)
+* [Ping pong](#ping-pong)
 
 ## Learning objectives
 
@@ -144,7 +145,9 @@ and you can run it using:
 mpirun -n 4 ./mpi_hello2
 ```
 
+## Ping pong
 
+We can now write programs that will exchange information.
 
 ---
 
