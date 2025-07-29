@@ -104,7 +104,11 @@ mpirun -n 4 ./mpi_hello
 
 ## Finding rank and size
 
-Every process that participates in an MPI program is given a unique number, referred to as the `rank`, within a given communications context, the default is `MPI_COMM_WORLD`, which starts from 0 to the total number of processes involved. We can query this information and use it in our MPI program:
+Every process that participates in an MPI program is given a unique number, referred to as the `rank`, within a given communications context, the default is `MPI_COMM_WORLD`, which starts from 0 to the total number of processes involved. 
+
+![Example MPI domain](imgs/MPIworld.png)
+
+We can query this information and use it in our MPI program:
 
 ```C
 #include <stdio.h>
@@ -147,7 +151,49 @@ mpirun -n 4 ./mpi_hello2
 
 ## Ping pong
 
-We can now write programs that will exchange information.
+We can now write programs that will exchange information. We will only use two processes for this exercise.
+
+```c
+#include <stdio.h>
+#include <mpi.h> 
+
+int main(int argc, char *argv[])
+{
+  int rank, size, myval;
+  
+  MPI_Init(&argc, &argv);
+  
+  /* Find out how many processes are involved. */
+  MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+  /* Find out what id this process has. */
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  
+  /* Check we are only using two processes. */
+  if(size > 2){
+    if(rank == 0){ /* Only want one process to print error. */
+      printf("This code will only work on two processes!");
+    }
+    /* Exit. */
+    MPI_Finalize();
+  }
+  
+if(rank == 0){
+  /* const void *buf, int count, MPI_Datatype datatype, int dest, int tag,
+             MPI_Comm comm*/
+  MPI_Send(&myval, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+  MPI_Recv();  
+}else{
+  MPI_Recv();
+  MPI_Send();
+}
+   
+
+  MPI_Finalize();
+}
+```
+
+
 
 ---
 
