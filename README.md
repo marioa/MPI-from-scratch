@@ -104,7 +104,7 @@ mpirun -n 4 ./mpi_hello
 
 ## Finding rank and size
 
-Every process that participates in an MPI program is given a unique number, referred to as the `rank`, within a given communications context, the default is `MPI_COMM_WORLD`, which starts from 0 to the total number of processes involved. 
+Every process that participates in an MPI program is given a unique number, referred to as the `rank`, within a given communications context, the default is `MPI_COMM_WORLD`, which starts from 0 to the total number of processes involved. In the diagram below we have 8 processes (we start counting from 0) defined in our communications world.
 
 ![Example MPI domain](imgs/MPIworld.png)
 
@@ -159,7 +159,7 @@ We can now write programs that will exchange information. We will only use two p
 
 int main(int argc, char *argv[])
 {
-  int rank, size, myval;
+  int rank, size, mysend, myrecv;
   
   MPI_Init(&argc, &argv);
   
@@ -177,18 +177,22 @@ int main(int argc, char *argv[])
     /* Exit. */
     MPI_Finalize();
   }
+  /* Initialise the values. */
+  mysend = rank;
+  myrecv = rank;
   
-if(rank == 0){
-  /* const void *buf, int count, MPI_Datatype datatype, int dest, int tag,
-             MPI_Comm comm*/
-  MPI_Send(&myval, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
-  MPI_Recv();  
-}else{
-  MPI_Recv();
-  MPI_Send();
-}
+  /* Exchange messages. */
+  if(rank == 0){
+    MPI_Send(&mysend, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);
+    MPI_Recv(&myrecv, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);  
+  }else{
+    MPI_Recv(&myrecv, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+    MPI_Send(&mysend, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+  }
    
-
+  /* Print out the result. */
+  printf("Rank %d has mysend=%d and myrecv=%d.\n", rank, mysend, myrecv);
+  
   MPI_Finalize();
 }
 ```
