@@ -192,10 +192,10 @@ int main(int argc, char *argv[])
   /* Check we are only using two processes. */
   if(size > 2){
     if(rank == 0){ /* Only want one process to print error. */
-      printf("This code will only work on two processes!");
+      printf("This code will only work on two processes!\n\n");
     }
     /* Exit. */
-    MPI_Finalize();
+    MPI_Abort(MPI_COMM_WORLD,1);
   }
   /* Initialise the values. */
   mysend = rank;
@@ -206,8 +206,8 @@ int main(int argc, char *argv[])
     MPI_Send(&mysend, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);
     MPI_Recv(&myrecv, 1, MPI_INT, 1, 1, MPI_COMM_WORLD, &status);
   }else{
-    MPI_Recv(&myrecv, 1, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
-    MPI_Send(&mysend, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+    MPI_Recv(&myrecv, 1, MPI_INT, 0, 1, MPI_COMM_WORLD, &status);
+    MPI_Send(&mysend, 1, MPI_INT, 0, 1, MPI_COMM_WORLD);
   }
    
   /* Print out the result. */
