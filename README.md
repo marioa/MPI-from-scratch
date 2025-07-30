@@ -151,7 +151,11 @@ mpirun -n 4 ./mpi_hello2
 
 ## Ping pong
 
-We can now write programs that will exchange information. We will only use two processes for this exercise.
+We can now write programs that will exchange information. 
+
+![Schematic depiction of a message exchange.](imgs/ping.png)
+
+We will only use two processes for this exercise.
 
 ```c
 #include <stdio.h>
@@ -160,6 +164,7 @@ We can now write programs that will exchange information. We will only use two p
 int main(int argc, char *argv[])
 {
   int rank, size, mysend, myrecv;
+  MPI_Status status;
   
   MPI_Init(&argc, &argv);
   
@@ -184,9 +189,9 @@ int main(int argc, char *argv[])
   /* Exchange messages. */
   if(rank == 0){
     MPI_Send(&mysend, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);
-    MPI_Recv(&myrecv, 1, MPI_INT, 1, 1, MPI_COMM_WORLD);  
+    MPI_Recv(&myrecv, 1, MPI_INT, 1, 1, MPI_COMM_WORLD, &status);
   }else{
-    MPI_Recv(&myrecv, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+    MPI_Recv(&myrecv, 1, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
     MPI_Send(&mysend, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
   }
    
@@ -195,6 +200,14 @@ int main(int argc, char *argv[])
   
   MPI_Finalize();
 }
+```
+
+See [pingpong.c](src/pingpong.c).
+
+Compile using:
+
+```c
+mpicc -o pingpong pingpong.c
 ```
 
 
