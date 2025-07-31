@@ -225,6 +225,14 @@ Compile using:
 mpicc -o pingpong pingpong.c
 ```
 
+and to run:
+
+```bash
+mpirun -n 2 ./pingpong
+Rank 1 has mysend=1 and myrecv=0.
+Rank 0 has mysend=0 and myrecv=1.
+```
+
 
 
 ---
