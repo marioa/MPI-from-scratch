@@ -14,6 +14,9 @@ mpi_hello2: src/mpi_hello2.c
 pingpong: src/pingpong.c
 	${CC} -o $@ $<
 
+ring: src/ring.c
+	${CC} -o $@ $<
+
 clean:
-	rm -fr ./mpi_hello ./mpi_hello2 ./pingpong *.dSYM
+	rm -fr ./mpi_hello ./mpi_hello2 ./pingpong ./ring *.dSYM
 
