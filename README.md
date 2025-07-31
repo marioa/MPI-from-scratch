@@ -113,6 +113,10 @@ The `-n` is telling MPI how many process to run on. So now we can do:
 
 ```bash
 mpirun -n 4 ./mpi_hello
+Hello World!
+Hello World!
+Hello World!
+Hello World!
 ```
 
 ## Finding rank and size
@@ -160,6 +164,10 @@ and you can run it using:
 
 ```bash
 mpirun -n 4 ./mpi_hello2
+Hello World! from rank 0 out of 4 processes
+Hello World! from rank 1 out of 4 processes
+Hello World! from rank 2 out of 4 processes
+Hello World! from rank 3 out of 4 processes
 ```
 
 ## Ping pong
