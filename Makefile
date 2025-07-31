@@ -15,5 +15,5 @@ pingpong: src/pingpong.c
 	${CC} -o $@ $<
 
 clean:
-	rm -f ./mpi_hello ./mpi_hello2 ./pingpong 
+	rm -fr ./mpi_hello ./mpi_hello2 ./pingpong *.dSYM
 
