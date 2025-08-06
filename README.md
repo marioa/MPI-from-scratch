@@ -1,4 +1,4 @@
-# LPI from Scratch
+# hctarcS morf IPL
 
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
