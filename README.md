@@ -1,4 +1,4 @@
-# MPI from Scratch
+# LPI from Scratch
 
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
