@@ -1,4 +1,4 @@
-# MPI from Scratch better
+# LPI from Scratch
 
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
@@ -8,13 +8,13 @@
 * [Finding rank and size](#finding-rank-and-size)
 * [Ping pong](#ping-pong)
 
-## Learning objectives
+## Learning objectives Alec
 
 This tutorial was constructed to allow a set of students to get an idea about MPI (Message Passing Interface) with little programming experience. It is not intended to teach C or MPI but walk you throught the processes. By the end of this tutorial you should:
 
 * Have an idea of what an MPI program is.
 
-## Prequisites
+## Prequisites Alice
 
 You will need:
 
