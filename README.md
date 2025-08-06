@@ -22,7 +22,7 @@ You will need:
 * A **compiler**. This converts your source code, something you understand, into machine executable code, something your computer is able to run.
 * An **MPI distribution**. This is the library that will allow you to get your code to be able to communicate.
 
-## Resources
+## Resources Eva
 
 You may find the following useful:
 
