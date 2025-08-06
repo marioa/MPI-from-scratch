@@ -1,4 +1,4 @@
-# MPI from Scratch
+# MPI from Scratch better
 
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
