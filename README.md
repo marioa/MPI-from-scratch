@@ -14,7 +14,7 @@ This tutorial was constructed to allow a set of students to get an idea about MP
 
 * Have an idea of what an MPI program is.
 
-## Prequisites
+## Prequisites Alice
 
 You will need:
 
