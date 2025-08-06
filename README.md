@@ -1,4 +1,4 @@
-# hctarcS morf IPL
+# MPI from Scratch
 
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
@@ -8,13 +8,13 @@
 * [Finding rank and size](#finding-rank-and-size)
 * [Ping pong](#ping-pong)
 
-## Learning objectives Alec
+## Learning objectives
 
 This tutorial was constructed to allow a set of students to get an idea about MPI (Message Passing Interface) with little programming experience. It is not intended to teach C or MPI but walk you throught the processes. By the end of this tutorial you should:
 
 * Have an idea of what an MPI program is.
 
-## Prequisites Alice
+## Prequisites
 
 You will need:
 
@@ -22,7 +22,7 @@ You will need:
 * A **compiler**. This converts your source code, something you understand, into machine executable code, something your computer is able to run.
 * An **MPI distribution**. This is the library that will allow you to get your code to be able to communicate.
 
-## Resources Eva
+## Resources
 
 You may find the following useful:
 
