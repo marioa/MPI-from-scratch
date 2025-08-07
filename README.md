@@ -7,7 +7,7 @@
 * [C code](#c-code)
 * [Finding rank and size](#finding-rank-and-size)
 * [Ping pong](#ping-pong)
-* [More toplogies](#more-topologies)
+* [More topologies](#more-topologies)
 
 ## Learning objectives
 
