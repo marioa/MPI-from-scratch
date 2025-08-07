@@ -48,7 +48,7 @@ Your first minimalist traditional C program is to get it to print out `Hello Wor
 /* argv is an array containing the values of the arguments */
 int main(int argc,char *argv[])
 {
-  printf("Hellow World!\n"); /* This will print hello world to the screen */
+  printf("Hello World!\n"); /* This will print hello world to the screen */
 }
 ```
 
