@@ -3,7 +3,7 @@
 
 CC = mpicc
 
-all: hello hello2 pingpong
+all: mpi_hello mpi_hello2 pingpong ring
 
 mpi_hello: src/mpi_hello.c
 	${CC} -o $@ $<
