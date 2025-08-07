@@ -7,6 +7,7 @@
 * [C code](#c-code)
 * [Finding rank and size](#finding-rank-and-size)
 * [Ping pong](#ping-pong)
+* [More toplogies](#more-topologies)
 
 ## Learning objectives Alec
 
@@ -313,6 +314,8 @@ Rank 0 has myrecv=8.
 ```
 
 which is the result we would expect with every process adding one to the result.
+
+## More topologies
 
 ---
 
