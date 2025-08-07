@@ -1,4 +1,4 @@
-# LPI from Scratch
+# MPI from Scratch
 
 * [Learning objectives](#learning-objectives)
 * [Prerequisites](#prerequisites)
@@ -9,13 +9,13 @@
 * [Ping pong](#ping-pong)
 * [More toplogies](#more-topologies)
 
-## Learning objectives Alec
+## Learning objectives
 
 This tutorial was constructed to allow a set of students to get an idea about MPI (Message Passing Interface) with little programming experience. It is not intended to teach C or MPI but walk you throught the processes. By the end of this tutorial you should:
 
 * Have an idea of what an MPI program is.
 
-## Prequisites Alice
+## Prequisites
 
 You will need:
 
@@ -49,7 +49,7 @@ Your first minimalist traditional C program is to get it to print out `Hello Wor
 /* argv is an array containing the values of the arguments */
 int main(int argc,char *argv[])
 {
-  printf("Hellow World!\n"); /* This will print hello world to the screen */
+  printf("Hello World!\n"); /* This will print hello world to the screen */
 }
 ```
 
