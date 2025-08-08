@@ -14,6 +14,10 @@ int main(int argc, char *argv[])
   /* Find out what id this process has, again pass the adreess of the variable. */
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
+ /*
+  * This code ensures that the output is produced in order - generally this would
+  * not be seen as good practice as one is creating a sequential bottleneck.
+  */
   for(i = 0; i < size; i++)
   {
      if(i == rank){
