@@ -18,5 +18,5 @@ ring: src/ring.c
 	${CC} -o $@ $<
 
 clean:
-	rm -fr ./mpi_hello ./mpi_hello2 ./pingpong ./ring *.dSYM
+	rm -fr ./hello ./mpi_hello ./mpi_hello2 ./pingpong ./ring *.dSYM
 
