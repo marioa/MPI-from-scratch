@@ -317,7 +317,11 @@ which is the result we would expect with every process adding one to the result.
 
 ## More topologies
 
-We have seen that we can create simple topologies, like a 1-dimensional ring, ourselves. When going to higher dimensions this becomes a little bit more challenging. Luckily MPI provides you with function calls that facilitate this process.
+We have seen that we can create simple topologies, like a 1-dimensional ring, ourselves. When going to higher dimensions this becomes a little bit more challenging. Luckily MPI provides you with function calls that facilitate this process. For instance you can create a Cartesian topology which will facilitate the decomposition of problems that share this topology.
+
+![A Cartesian topology.](imgs/CommCart.png)
+
+The creation of a new topology will create a new communicator. You can still the use the parent communicator but bear in mind that the ranks may have changed between the different communicaors.
 
 ---
 
