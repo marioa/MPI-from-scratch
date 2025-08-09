@@ -199,7 +199,7 @@ int main(int argc, char *argv[])
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   
   /* Check we are only using two processes. */
-  if(size > 2){
+  if(size != 2){
     if(rank == 0){ /* Only want one process to print error. */
       printf("This code will only work on two processes!\n\n");
     }
