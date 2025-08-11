@@ -351,7 +351,7 @@ int main(int argc, char *argv[])
   }
   
  /* Create a cartesian communicator. */
-  MPI_Cart_create(MPI_COMM_WORLD, 2 dims, periods, 1, &Comm_cart);
+  MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, 1, &Comm_cart);
   
   MPI_Finalize();
 }
