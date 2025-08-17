@@ -17,6 +17,9 @@ pingpong: src/pingpong.c
 ring: src/ring.c
 	${CC} -o $@ $<
 
+mpi_cart: src/mpi_cart.c
+	${CC} -o $@ $<
+
 clean:
-	rm -fr ./hello ./mpi_hello ./mpi_hello2 ./pingpong ./ring *.dSYM
+	rm -fr ./hello ./mpi_hello ./mpi_hello2 ./pingpong ./ring *.dSYM ./mpi_cart
 
