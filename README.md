@@ -366,6 +366,8 @@ int main(int argc, char *argv[])
 }
 ```
 
+See [mpi_cart.c](src/mpi_cart.c).
+
 
 
 ---
