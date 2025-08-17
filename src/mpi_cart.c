@@ -3,7 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-  int rank, size, mysend, myrecv;
+  int rank, size;
+  int left, right, up, down;
+  int newrank;
   int dims[2], periods[2]={1,1};
   MPI_Comm Comm_cart;
   MPI_Status status;
@@ -27,6 +29,13 @@ int main(int argc, char *argv[])
  /* Create a cartesian communicator. */
   MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, 1, &Comm_cart);
   
+  /* Find new ranks in this communicator. */
+  MPI_Comm_rank(Comm_cart, &newrank);
+
+  /* Find the nearest neighbours. */
+  MPI_Cart_shift(Comm_cart, 0, 1, &left, &right);
+  MPI_Cart_shift(Comm_cart, 1, 1, &up, &down);
+
   MPI_Finalize();
 
 }
